@@ -48,7 +48,9 @@ El escenario se ejecuta **Immediately** (cada vez que llega una consulta).
 
 **La página** (`index.html`, un solo archivo con HTML, CSS y JavaScript, sin librerías) tiene una lista "Tema" con los 6 temas y el botón "Ver noticias". Envía el tema por POST con `fetch` y `URLSearchParams` (un solo campo, `tema`), muestra "Buscando y resumiendo noticias..." y desactiva el botón mientras espera, pone la fecha de hoy junto a "Resultados", respeta los saltos de línea (`white-space: pre-line`), convierte en enlaces clicables (otra pestaña) las líneas que empiezan con `http`, y si hay un error muestra "No se pudieron obtener las noticias, intenta de nuevo."
 
-![Página con los resultados de un tema](imagenes/pagina_resultados.png)
+![Página publicada con el tema "Mazatlán medio ambiente": resumen y primeras noticias](imagenes/pagina_resultados_1.jpg)
+
+![Página publicada: resto de las noticias con sus enlaces y la acción para el estudiante](imagenes/pagina_resultados_2.jpg)
 
 ## 4. Pruebas de los 6 temas
 Se probaron los 6 temas con el escenario activo el 30 de octubre de 2026. Los seis devolvieron 5 noticias con su resumen y una acción para el estudiante.
