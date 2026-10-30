@@ -42,27 +42,29 @@ El escenario se ejecuta **Immediately** (cada vez que llega una consulta).
 
 **La página** (`index.html`, un solo archivo con HTML, CSS y JavaScript, sin librerías) tiene una lista "Tema" con los 6 temas y el botón "Ver noticias". Envía el tema por POST con `fetch` y `URLSearchParams` (un solo campo, `tema`), muestra "Buscando y resumiendo noticias..." y desactiva el botón mientras espera, pone la fecha de hoy junto a "Resultados", respeta los saltos de línea (`white-space: pre-line`), convierte en enlaces clicables (otra pestaña) las líneas que empiezan con `http`, y si hay un error muestra "No se pudieron obtener las noticias, intenta de nuevo."
 
-![Página publicada con el tema "Mazatlán medio ambiente": resumen y primeras noticias](imagenes/pagina_resultados_1.jpg)
+![Página publicada con el tema "Mazatlán medio ambiente": resumen y primeras noticias](imagenes/pruebas/06_mazatlan_1.jpg)
 
-![Página publicada: resto de las noticias con sus enlaces y la acción para el estudiante](imagenes/pagina_resultados_2.jpg)
+![Página publicada: resto de las noticias con sus enlaces y la acción para el estudiante](imagenes/pruebas/06_mazatlan_2.jpg)
 
 ## 4. Pruebas de los 6 temas
-Se probaron los 6 temas con el escenario activo el 30 de octubre de 2026. Los seis devolvieron 5 noticias con su resumen y una acción para el estudiante.
+Se probaron los 6 temas desde la **página publicada** en Chrome, con el escenario activo, el 30 de octubre de 2026 (capturas en [`imagenes/pruebas/`](imagenes/pruebas/)). Los seis devolvieron 5 noticias con su resumen y una acción para el estudiante.
 
-| Tema | Noticias en Google News* | De los últimos 7 días* | Las 5 noticias que mostró la página |
-|---|---|---|---|
-| cambio climático | 101 | 97 | Senado de México, EL PAÍS (2), El Financiero, Sin Embargo |
-| contaminación del mar | 59 | 4 | National Geographic España, Infobae (Panamá), UNEP, ONU, BBVA |
-| plásticos de un solo uso | 49 | 4 | El Tiempo, La Jornada Zacatecas, Excélsior, La Prensa, La Nación |
-| energías renovables México | 100 | 20 | Imagen Radio, El Heraldo de México, Energía a Debate, Energía Estratégica, Gaceta UNAM |
-| manglares Sinaloa | 76 | 2 | La Jornada, Infobae, Sector Primario Informativo, Revista Espejo, El Sol de México |
-| Mazatlán medio ambiente | 57 | 4 | Revista Espejo, Noroeste, Gob MX (Profepa), Cultura Mazatlán, El Sol de México |
+| Tema | Noticias en Google News* | De los últimos 7 días* | Algunos medios que aparecieron** | Capturas |
+|---|---|---|---|---|
+| cambio climático | 101 | 97 | Senado de México, EL PAÍS (2), El Financiero, Sin Embargo | [1](imagenes/pruebas/01_cambio_climatico_1.jpg) · [2](imagenes/pruebas/01_cambio_climatico_2.jpg) |
+| contaminación del mar | 59 | 4 | National Geographic España, Infobae (Panamá), UNEP, ONU, BBVA | [1](imagenes/pruebas/02_contaminacion_mar_1.jpg) · [2](imagenes/pruebas/02_contaminacion_mar_2.jpg) |
+| plásticos de un solo uso | 49 | 4 | El Tiempo, La Jornada Zacatecas, Excélsior, La Prensa, La Nación | [1](imagenes/pruebas/03_plasticos_1.jpg) · [2](imagenes/pruebas/03_plasticos_2.jpg) |
+| energías renovables México | 100 | 20 | Imagen Radio, El Heraldo de México, Energía a Debate, Energía Estratégica, Gaceta UNAM | [1](imagenes/pruebas/04_energias_renovables_1.jpg) · [2](imagenes/pruebas/04_energias_renovables_2.jpg) |
+| manglares Sinaloa | 76 | 2 | La Jornada, Infobae, Sector Primario Informativo, Revista Espejo, El Sol de México | [1](imagenes/pruebas/05_manglares_sinaloa_1.jpg) · [2](imagenes/pruebas/05_manglares_sinaloa_2.jpg) |
+| Mazatlán medio ambiente | 57 | 4 | Revista Espejo, Noroeste, Gob MX (Profepa), Cultura Mazatlán, El Sol de México | [1](imagenes/pruebas/06_mazatlan_1.jpg) · [2](imagenes/pruebas/06_mazatlan_2.jpg) |
 
 \*Conteo propio al pedir el mismo RSS de Google News a las mismas horas; el feed devuelve como máximo unas 100 noticias. La página solo muestra 5 (límite del módulo RSS).
 
+**Las 5 noticias cambian de una consulta a otra, porque Google News se actualiza a lo largo del día; los medios de la tabla son de la primera ronda y las capturas son de la segunda.
+
 ### Errores que se vieron en las respuestas
-- **Noticia número 6 inventada.** En 3 de los 6 temas (plásticos, energías renovables y manglares) la IA agregó una sexta noticia que no existe: el RSS solo trae 5. Por ejemplo, en manglares puso "Título: No especificado como noticia individual adicional en la lista", y le repitió el enlace de otra noticia. Esto rompe la instrucción de no agregar noticias que no estén en la lista.
-- **Formato inconsistente.** En plásticos agregó la fecha de cada noticia y en los demás temas no; la sangría de los enlaces también cambia de un tema a otro.
+- **Noticia número 6 inventada.** En 3 de los 6 temas (plásticos, energías renovables y manglares) la IA agregó una sexta noticia que no existe: el RSS solo trae 5. Por ejemplo, en manglares puso "Título: No especificado como noticia individual adicional en la lista", y le repitió el enlace de otra noticia. Esto rompe la instrucción de no agregar noticias que no estén en la lista. Volvió a pasar en la prueba desde la página con manglares Sinaloa ([captura 2](imagenes/pruebas/05_manglares_sinaloa_2.jpg)): la noticia 6 es una «sinopsis» sin título propio que repite el enlace de la 5. En esa segunda ronda plásticos y energías renovables sí mostraron solo 5 noticias.
+- **Formato inconsistente.** En plásticos agregó la fecha de cada noticia y en los demás temas no; la sangría de los enlaces también cambia de un tema a otro. En la segunda ronda, cambio climático puso la fecha junto a cada título y los demás temas no.
 - **Palabras repetidas.** En Mazatlán dijo "manglares, manglares" en una de las primeras pruebas.
 
 ## 5. Verificación contra las noticias originales
