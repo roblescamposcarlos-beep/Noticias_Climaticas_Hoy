@@ -3,15 +3,9 @@
 | Dato | Valor |
 |---|---|
 | Estudiante | Roberto Carlos Robles Campos |
-| No. de control | 251000068 |
 | Escuela | Tecnológico Nacional de México – Instituto Tecnológico de Mazatlán |
 | Materia | Desarrollo Sustentable (ACD-0908) |
-| Profesor | Miguel Ángel Barrón Hernández |
-| Carrera | Ingeniería en Sistemas Computacionales |
 | Práctica | 3.5-P1 Página web "Noticias climáticas del día" |
-| Modalidad | Individual |
-| Fecha | 30 de octubre de 2026 |
-| Lugar | Mazatlán, Sinaloa |
 
 **Página publicada:** https://roblescamposcarlos-beep.github.io/Noticias_Climaticas_Hoy/
 **Código:** [`codigo/index.html`](codigo/index.html) (la misma página; una copia está en la raíz para que GitHub Pages la publique) · **Escenario de Make:** [`codigo/blueprint.json`](codigo/blueprint.json) · **Resultados (PDF):** [`resultados/Resultados.pdf`](resultados/Resultados.pdf)
