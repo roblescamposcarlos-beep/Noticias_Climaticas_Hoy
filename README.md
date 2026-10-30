@@ -34,7 +34,7 @@ Seis temas, uno o más de cada bloque (A–D) y dos locales (E). Todos tienen no
 ## 3. Cómo funciona
 Flujo: **Página web → Make (Webhook → RSS → Text aggregator → Make AI Agent → Webhook Response) → Página web**.
 
-![Escenario Noticias_Climaticas_RobertoRobles en Make](imagenes/escenario_completo.png)
+![Escenario Noticias_Climaticas_RobertoRobles en Make](imagenes/escenario_completo.jpg)
 
 | # | Módulo | Configuración |
 |---|---|---|
