@@ -84,7 +84,9 @@ De tres temas distintos se abrió una noticia original y se comparó con lo que 
 En el historial del escenario, cada consulta con noticias consumió entre **5.71 y 6.49 créditos** (≈ 6.0), con **5 operaciones** (webhook, RSS, Text aggregator, AI Agent y Webhook response) y entre 9 y 19 segundos de duración. Una consulta sin noticias (el RSS devolvió cero) gastó ≈ 5.1 créditos, porque los módulos corren aunque no haya noticias.
 
 ## Video de la prueba en vivo
-*(pendiente)*
+[Ver la prueba en YouTube](https://youtu.be/uBMQ5PrepRo)
+
+El enlace también está en [`video/enlace.txt`](video/enlace.txt).
 
 ## 7. Preguntas de reflexión
 
